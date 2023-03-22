@@ -20,8 +20,6 @@ export class AppComponent {
 
   percorso = "../assets/images/carousel-";
 
-  
-
 
 }
 

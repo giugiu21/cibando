@@ -24,18 +24,19 @@
 </header>
 
 
-<ngb-carousel *ngIf="images">
-	<ng-template ngbSlide>
+<ngb-carousel *ngIf="images.length > 1">
+	<ng-template ngbSlide *ngFor="let image of images">
 		<div class="picsum-img-wrapper">
-			<img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+			<img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
 		</div>
 		<div class="carousel-caption">
-			<h3>{{images[0].label}}</h3>
+			<h3>{{image.label}}</h3>
 		</div>
 	</ng-template>
 </ngb-carousel>
 
-
+<div *ngIf="images.length == 1" class= "picsum-image-wrapper" style="background: url('{{percorso + images[0].id}}.jpg'); background-size: cover; height: 550px; width: 100%;">
+</div>
 
 
 <div id="main-container">
@@ -44,4 +45,7 @@
     <p class="paragrafo">Ecco un paragrafo di testo</p>
   </div>
 </div>
+
+
+
 <router-outlet></router-outlet>
