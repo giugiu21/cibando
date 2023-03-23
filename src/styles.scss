@@ -31,8 +31,13 @@ html, body {height: 100%;}
         font-size: 40px;
         text-shadow: black 2px 3px 3px;
     }
+
 }
 
+.testoEvidenziato {
+    background-color: yellow;
+    width: 30%;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

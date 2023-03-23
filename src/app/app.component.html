@@ -23,26 +23,20 @@
   </nav>
 </header>
 
-
-<ngb-carousel *ngIf="images.length > 1">
-	<ng-template ngbSlide *ngFor="let image of images">
-		<div class="picsum-img-wrapper">
-			<img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
-		</div>
-		<div class="carousel-caption">
-			<h3>{{image.label}}</h3>
-		</div>
-	</ng-template>
-</ngb-carousel>
-
-<div *ngIf="images.length == 1" class= "picsum-image-wrapper" style="background: url('{{percorso + images[0].id}}.jpg'); background-size: cover; height: 550px; width: 100%;">
-</div>
-
+<app-carousel></app-carousel>
 
 <div id="main-container">
   <div class="container-titolo">
-    <h2>App di esempio in Angular</h2>
-    <p class="paragrafo">Ecco un paragrafo di testo</p>
+    <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : '' "(click)="onEvidenziazione()" style = "cursor : pointer">Benvenuti su Cibando</h2>
+    <p class="paragrafo" [ngStyle]="{'background-color': evidenziato === true ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque nihil molestias illum fuga commodi laborum totam nostrum officiis, 
+      odit enim quidem ut impedit repellendus maiores dolores ad iusto debitis consequatur excepturi. Voluptatum amet in obcaecati provident praesentium qui optio 
+      id a necessitatibus consectetur maxime odit voluptate nam quisquam, eaque molestias dolore repellat sit sequi quaerat. Doloremque debitis, quae iste deserunt reiciendis vel ut! 
+      Quis adipisci ratione ipsum, expedita ullam animi asperiores aspernatur repellat sint neque repellendus exercitationem nostrum quia, culpa amet quae totam harum sunt 
+      omnis minus quo officia doloremque enim deleniti! Aperiam possimus perspiciatis odio assumenda atque repellendus numquam doloribus tempora doloremque a temporibus corrupti officiis 
+      incidunt magnam, ipsam voluptatibus non explicabo est vel nostrum eveniet molestias. Minima aliquid expedita sunt aperiam alias quis sit architecto? 
+      Odio, ad. Ut consequuntur ullam harum dolores reiciendis adipisci modi laborum natus, quisquam nemo accusamus labore minima culpa corrupti? Alias dolore corporis incidunt ad debitis, 
+      iure unde asperiores nesciunt eveniet tempora odit quaerat ex deleniti porro quas consectetur possimus. Sed quod adipisci doloremque blanditiis autem architecto aspernatur quam delectus 
+      odit a corporis beatae iusto magni recusandae ut animi repellat quae dicta tempora, nesciunt ab et dolorem rem voluptatibus! Quas doloremque quia mollitia quaerat.</p>
   </div>
 </div>
 
