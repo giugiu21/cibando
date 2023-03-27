@@ -1,7 +1,7 @@
 
-  <app-header></app-header>
   <app-carousel></app-carousel>
   <div id="main-container">
+   
     <div class="container-titolo">
       <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : '' "(click)="onEvidenziazione()" style = "cursor : pointer">Benvenuti su Cibando</h2>
       <p class="paragrafo" [ngStyle]="{'background-color': evidenziato === true ? 'yellow' : 'white'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque nihil molestias illum fuga commodi laborum totam nostrum officiis, 
@@ -16,5 +16,4 @@
     </div>
   </div>
   
-  <app-recipes></app-recipes>
-  <app-footer></app-footer>
+  

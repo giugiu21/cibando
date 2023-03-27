@@ -1,6 +1,13 @@
 
 footer{
     background-color: #739900!important;
+    display: block;
+    float: left;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px;
+    height: 200px;
     
     p{
         color: white!important;
@@ -35,16 +42,4 @@ a{
     text-decoration: none;
 }
 
-// .contenitore-logo{
-//     float: left;
-//     border: 1px solid black;
-//     margin-left: 15%;
-
-//     img{
-//         width: 80px;
-//         height: 80px;
-//         padding-top: 20px;
-//         padding-left: 20px;
-//     }
-// }
 
