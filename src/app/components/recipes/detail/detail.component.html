@@ -1,1 +1,12 @@
-<p>detail works!</p>
+<div class="container-dettaglio">
+    <div class="immagine" [ngStyle]="{'background-image': 'url(' + ricetta.image +')'}"></div>
+    <div class="container-ricetta">
+        <h2>{{ricetta.title}}</h2>
+        <p>{{ricetta.description}}</p>
+        <h3>Difficoltà:</h3>
+        <h4>{{ricetta.difficulty}}</h4>
+    </div>
+    <div class="data-pubblicazione">
+        <h5>Ricetta pubblicata il {{ricetta.date}}</h5>
+    </div>
+</div>

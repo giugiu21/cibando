@@ -6,7 +6,7 @@
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
       <p class="card-text">{{recipe.description.slice(0, 250)}}...</p>
-      <a routerLink="/dettaglio/{{recipe._id}}" class="btn btn-primary">Visualizza</a>
+      <a routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary">Visualizza</a>
     </div>
   </div>
 </div>
