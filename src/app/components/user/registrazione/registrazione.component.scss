@@ -1,0 +1,56 @@
+@import "../../../../styles/colors.scss";
+
+.container-registrazione{
+    background-color: $secondary-color-1;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    input.ng-invalid.ng-touched{
+        border: 1px solid red;
+    }
+
+    input.ng-valid.ng-touched{
+        border: 1px solid green;
+    }
+
+}
+
+.termini-condizioni{
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+
+ .img-fluid{
+     border-top-right-radius: 1rem;
+     border-bottom-right-radius: 1rem;
+     float:left;
+     width: 50%;
+     flex: 1 1 auto;
+     height: 700px;
+ }
+
+// .colonna-dx{
+//     background-image: url('../../../../assets/images/cheese-board.jpg');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+    
+// }
+
+.card-body{
+    float:left;
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+   
+}
+
+
+
+p.help.is-danger{
+    margin-top: -13px;
+    color: rgb(235, 29, 29)!important;
+    font-weight: bold!important;
+    font-size: 12px!important;
+}
+
