@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidator } from './customValidator';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrazione',
   templateUrl: './registrazione.component.html',
   styleUrls: ['./registrazione.component.scss']
 })
-export class RegistrazioneComponent {
+export class RegistrazioneComponent{
+
+  // name: string;
+  // email: string;
 
   form = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -19,8 +24,20 @@ export class RegistrazioneComponent {
   [CustomValidator.MatchValidator('password', 'ripetiPassword')]
   );
 
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ){}
+
+
   onSubmit(){
-    console.log(this.form.value);
-  }
+    // console.log(this.form.value);
+    const user = {
+     name: this.form.value.name,
+     email: this.form.value.email
+    }
+    this.userService.datiUtente.next(user);
+    this.router.navigate(['home']);
+   }
 
 }
