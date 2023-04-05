@@ -147,10 +147,10 @@
 
                         <input class="form-check-input me-2" type="checkbox" value="" id="accetto" name="accetto" formControlName="accetto"/>
                         <label class="form-check-label" for="accetto">
-                          Dichiaro di accettare i <a (click)="open(modaleServizi)">Termini di servizio</a>
+                          Dichiaro di accettare i <a (click)="open(modaleServizi)" id="termini">Termini di servizio</a>
                         </label>
-                        <br>
-                        <a (click)="open(modaleDue, 'titolo')">Apri seconda modale</a>
+                        <!-- <br>
+                        <a (click)="open(modaleDue, 'titolo')">Apri seconda modale</a> -->
                       </div>
                       <div class="termini-condizioni">
                         <p class="help is-danger" *ngIf="!form.get('accetto')?.valid && form.get('accetto').touched">Per proseguire è obbligatorio accettare i termini e le condizioni del sito</p>
@@ -183,8 +183,8 @@
 
   <ng-template #modaleServizi let-modal>
     <div class="modal-header">
-      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
       <h3>Termini di servizio</h3>
+      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
     </div>
     <div class="modal-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni distinctio odit ex enim. Tempore quas minima perspiciatis animi illum, ut minus maiores atque exercitationem labore nesciunt quisquam soluta maxime saepe! Quae distinctio quasi autem magnam vero pariatur mollitia architecto voluptatibus blanditiis, minus tempora totam animi tempore ipsum harum tenetur eaque fugiat molestiae fuga, commodi facilis. Amet libero iure veritatis eos fugiat eaque. Quos quaerat corrupti laborum voluptas repudiandae, autem vel qui atque voluptatibus? Totam sed molestias vel placeat? Temporibus, culpa. Quod quas neque harum magnam tempora, vitae amet numquam dolore itaque repudiandae voluptate non facilis, obcaecati similique inventore magni incidunt!</p>
@@ -197,8 +197,8 @@
 
   <ng-template #modaleDue let-modal>
     <div class="modal-header">
-      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
       <h3>Modale due</h3>
+      <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
     </div>
     <div class="modal-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni distinctio odit ex enim. Tempore quas minima perspiciatis animi illum, ut minus maiores atque exercitationem labore nesciunt quisquam soluta maxime saepe! Quae distinctio quasi autem magnam vero pariatur mollitia architecto voluptatibus blanditiis, minus tempora totam animi tempore ipsum harum tenetur eaque fugiat molestiae fuga, commodi facilis. Amet libero iure veritatis eos fugiat eaque. Quos quaerat corrupti laborum voluptas repudiandae, autem vel qui atque voluptatibus? Totam sed molestias vel placeat? Temporibus, culpa. Quod quas neque harum magnam tempora, vitae amet numquam dolore itaque repudiandae voluptate non facilis, obcaecati similique inventore magni incidunt!</p>

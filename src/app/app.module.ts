@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrazioneComponent } from './components/user/registrazione/registrazione.component';
+import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.component';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { RegistrazioneComponent } from './components/user/registrazione/registra
     RecipeCardComponent,
     DetailComponent,
     RecipesListComponent,
-    RegistrazioneComponent
+    RegistrazioneComponent,
+    AddRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { RegistrazioneComponent } from './components/user/registrazione/registra
     PasswordModule,
     DividerModule,
     PaginatorModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

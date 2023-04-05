@@ -1,9 +1,18 @@
+@import "../../../styles/colors.scss";
+
 .icona-cibando{
     width: 60px;
     margin-right: 5px;
 }
 
-
+.btn-nav{
+    background-color: white!important;
+    border-color: white;
+    font-weight: bold;
+    margin-top: 6px;
+    border-radius: 1rem;
+    color: $primary-color-1;
+}
 
 .mat-icon{
     height: 15px;

@@ -1,0 +1,57 @@
+<div class="container-main-form">
+    <div class="container-form">
+        <h3>Inserisci una nuova ricetta</h3>
+        <form class="contenitore-form" [formGroup]="form">
+            <div>
+                <div class="form-element">
+                    <label>Titolo ricetta:</label>
+                    <input type="text" id="title" name="title" class="form-control" formControlName="title"/>
+                    <p class="danger" *ngIf="!form.get('title')?.valid && form.get('title').touched">Il campo titolo è obbligatorio</p>
+                </div>
+    
+                <div class="form-element">
+                    <label>Descrizione ricetta:</label>
+                    <br>
+                    <textarea rows = "5" cols = "60" name = "description" class="form-control" formControlName="description"></textarea>
+                    <p class="danger" *ngIf="!form.get('description')?.valid && form.get('description').touched">Il campo descrizione è obbligatorio</p>
+                </div>
+    
+                <div class="form-element">
+                    <label>Inserisci l'url dell'immagine:</label>
+                    <input type="text" id="image" name="image" class="form-control" formControlName="image"/>
+                    <p class="danger" *ngIf="!form.get('image')?.valid && form.get('image').touched">Il campo url immagine è obbligatorio</p>
+                </div>
+    
+                <div class="form-element">
+                    <label>Inserisci la difficoltà da 1 a 5:</label>
+                    <input type="text" id="difficulty" name="difficulty" class="form-control" formControlName="difficulty"/>
+                    <p class="danger" *ngIf="!form.get('difficulty')?.valid && form.get('difficulty').touched">Il campo difficoltà è obbligatorio</p>
+                </div>
+                <div class="container-btn-form">
+                    <button type="submit" class="btn btn-primary" (click)="open(modaleAddRecipes)">Pubblica Ricetta</button>
+                </div>
+            </div>
+            
+
+        </form>
+        
+    </div>
+    
+</div>
+
+
+<ng-template #modaleAddRecipes let-modal>
+    <div class="modal-header">
+        <h3>Ricetta Aggiunta!</h3>
+        <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Riepilogo:</h4>
+        <p>Titolo: {{form.value.title}}</p>
+        <p>Descrizione: {{form.value.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" (click)="modal.dismiss()" routerLink="recipes">CHIUDI</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close()" ngbAutoFocus ruterLink="addRecipe">AGGIUNGI ALTRA RICETTA</button>
+      </div>
+</ng-template>
