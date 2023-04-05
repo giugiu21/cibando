@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginatorModule } from 'primeng/paginator';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,6 +19,7 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrazioneComponent } from './components/user/registrazione/registrazione.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { RegistrazioneComponent } from './components/user/registrazione/registra
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

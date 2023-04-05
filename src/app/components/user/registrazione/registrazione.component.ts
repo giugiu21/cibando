@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidator } from './customValidator';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-registrazione',
@@ -27,6 +28,7 @@ export class RegistrazioneComponent{
   constructor(
     private userService: UserService,
     private router: Router,
+    private modalService: NgbModal,
   ){}
 
 
@@ -38,6 +40,16 @@ export class RegistrazioneComponent{
     }
     this.userService.datiUtente.next(user);
     this.router.navigate(['home']);
+   }
+
+   open(content: any, titolo?: string){
+    let title = titolo;
+
+    this.modalService.open(content, { ariaLabelledBy: 'modale servizi', size: 'lg', centered: true}).result.then((res) =>{
+      console.log('azione da eseguire')
+    }).catch((res) => {
+      console.log('nessuna azione da eseguire')
+    });
    }
 
 }
