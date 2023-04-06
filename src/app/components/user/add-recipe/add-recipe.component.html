@@ -1,7 +1,7 @@
 <div class="container-main-form">
     <div class="container-form">
         <h3>Inserisci una nuova ricetta</h3>
-        <form class="contenitore-form" [formGroup]="form">
+        <form class="contenitore-form" [formGroup]="form" (onSubmit)="onSubmit()">
             <div>
                 <div class="form-element">
                     <label>Titolo ricetta:</label>
@@ -47,8 +47,8 @@
       </div>
       <div class="modal-body">
         <h4>Riepilogo:</h4>
-        <p>Titolo: {{form.value.title}}</p>
-        <p>Descrizione: {{form.value.description}}</p>
+        <p>Titolo: {{ricettaInserita.title}}</p>
+        <p>Descrizione: {{ricettaInserita.description}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn" (click)="modal.dismiss()" routerLink="recipes">CHIUDI</button>

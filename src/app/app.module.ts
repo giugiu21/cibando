@@ -21,6 +21,7 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrazioneComponent } from './components/user/registrazione/registrazione.component';
 import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.comp
     DetailComponent,
     RecipesListComponent,
     RegistrazioneComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-add-recipe',
@@ -10,6 +11,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./add-recipe.component.scss']
 })
 export class AddRecipeComponent {
+
+  ricettaInserita: any;
 
   form = new FormGroup({
     title: new FormControl('', Validators.required),
@@ -23,7 +26,7 @@ export class AddRecipeComponent {
     private recipeService: RecipeService,
     private modalService: NgbModal){}
 
-  addRecipe(){
+  onSubmit(){
     // console.log(this.form.value);
     const newRecipe = {
      title: this.form.value.title,
@@ -33,16 +36,16 @@ export class AddRecipeComponent {
      published: true
     }
 
-    this.recipeService.postRecipe(newRecipe)
-    .subscribe(
-      res => {
+    this.recipeService.postRecipe(newRecipe).pipe(take(1))
+    .subscribe({
+      next: (res) => {
         console.log(res);
+        this.ricettaInserita = res;
       },
-      error => {
-        console.log(error)
-      });
-
-    //this.router.navigate(['ricette']);
+      error: (err) => {
+        console.log(err)
+      }});
+    
    }
 
 
@@ -50,15 +53,15 @@ export class AddRecipeComponent {
 
 
    open(content: any){
-
+    this.onSubmit();
     this.modalService.open(content, { ariaLabelledBy: 'modale add recipes', size: 'lg', centered: true}).result.then((res) =>{
       //console.log('azione da eseguire')
-      this.addRecipe();
       this.form.reset();
 
     }).catch((res) => {
-      this.addRecipe();
-      console.log('nessuna azione da eseguire')
+      this.ricettaInserita = '';
+      this.router.navigate(['ricette']);
+      //console.log('nessuna azione da eseguire')
     });
    }
 

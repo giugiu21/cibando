@@ -27,8 +27,7 @@ export class RecipeService {
   }
 
   postRecipe(res: any): Observable<any>{
-    //return this.http.post(res, `${this.apiBaseUrl}/`);
-    return this.http.post(this.apiBaseUrl, res);
+    return this.http.post<any>(`${this.apiBaseUrl}/`, res);
   }
 
 
