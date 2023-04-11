@@ -2,22 +2,29 @@ import { Component, EventEmitter, Input, OnInit, Output, OnDestroy } from '@angu
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router } from '@angular/router';
-import { take } from 'rxjs';
+import { Observable, take, map } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
   styleUrls: ['./recipe-card.component.scss']
 })
-export class RecipeCardComponent implements OnInit, OnDestroy{
+export class RecipeCardComponent implements OnDestroy{
 
  @Input() pag: string;
  @Output() messaggio = new EventEmitter();
 
- recipes: Recipe[];
+ //recipes: Recipe[];
  ricetteTotali: number;
  page = 1;
  ricettePerPagina = 4;
+
+  recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
+    //map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),//plus
+    map(res => this.ricette = res),
+  );
+  ricette: Recipe[];
+
 
  constructor(
   private recipeService: RecipeService,
@@ -29,30 +36,32 @@ export class RecipeCardComponent implements OnInit, OnDestroy{
     
   }
   
- ngOnInit(): void {
-  this.prendiRicette();
-  //this.metodino();
-  }
+//  ngOnInit(): void {
+//   this.prendiRicette();
+//   //this.metodino();
+//   }
 
-  prendiRicette(){
-    this.recipeService.getRecipes()
-    .pipe(
-      take(1)
-    )
-    .subscribe({
-      next: (res) => {
-        this.recipes = res;
 
-        if(this.pag){
-          this.recipes = this.recipes.sort((a,b) => b._id - a._id).slice(0,4);
-        }
-        this.ricetteTotali = res.length;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
-  }
+
+  // prendiRicette(){
+  //   this.recipeService.getRecipes()
+  //   .pipe(
+  //     take(1)
+  //   )
+  //   .subscribe({
+  //     next: (res) => {
+  //       this.recipes = res;
+
+  //       if(this.pag){
+  //         this.recipes = this.recipes.sort((a,b) => b._id - a._id).slice(0,4);
+  //       }
+  //       this.ricetteTotali = res.length;
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     }
+  //   })
+  // }
 
 
  inviaTitolo(titolo: string){

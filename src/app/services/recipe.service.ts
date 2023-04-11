@@ -13,11 +13,18 @@ export class RecipeService {
 
   constructor( private http: HttpClient) { }
 
-  getRecipes(): Observable<Recipe[]> {
+  // getRecipes(): Observable<Recipe[]> {
+  //   //return of (RECIPES);
+  //   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
+
+  // }
+
+  getRecipes() {
     //return of (RECIPES);
     return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
 
   }
+
 
   getRecipe(id: string): Observable<Recipe> {
     // const recipe = RECIPES.find(ricetta => ricetta._id == id);
@@ -25,6 +32,7 @@ export class RecipeService {
     return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`)
 
   }
+
 
   postRecipe(res: any): Observable<any>{
     return this.http.post<any>(`${this.apiBaseUrl}/`, res);

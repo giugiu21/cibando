@@ -1,0 +1,44 @@
+<div *ngIf="gruppiCombinati$ | async; else Loading">
+    <h2 id="titolo">Elenco dei clienti, rivenditori e marche del sito:</h2>
+    <div class="elenco">
+        <div>
+            <h3>Clienti:</h3>
+            <ul>
+                <li *ngFor="let cliente of gruppi[0]">
+                    {{cliente.name || cliente}}
+                </li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>Riveditori:</h3>
+            <ul>
+                <li *ngFor="let cliente of gruppi[1]">
+                    {{cliente.name || cliente}}
+                </li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>Marche:</h3>
+            <ul>
+                <li *ngFor="let cliente of gruppi[2]">
+                    {{cliente.name || cliente}}
+                </li>
+            </ul>
+        </div>
+        
+
+    </div>
+    
+
+</div>
+
+<ng-template #Loading>
+    <div class="loading">
+        <h2>Loading</h2>
+    </div> 
+    <div class="image">
+        <img src="../../../assets/images/loading.gif">
+    </div>
+</ng-template>
