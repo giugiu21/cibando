@@ -1,0 +1,67 @@
+@import "../../../../styles/colors.scss";
+
+.container-main{
+    height: 600px;
+    margin: 0;
+    width: 100%;
+    margin-bottom: -30px;
+    padding-top: 12%;
+    padding-bottom: 12%;
+    // background-image: url('https://static1.bigstockphoto.com/4/9/3/large1500/394303223.jpg');
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+
+}
+
+
+form{
+    background-color: rgba(255, 255, 255, 0.779);
+     margin-left: 20%;
+    margin-right: 10%;
+    width: 60%;
+    border: 1.5px solid rgba(29, 28, 28, 0.599);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.container-form{
+
+    .form-element{
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-bottom: 10px;
+    }
+
+    h2{
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .btn{
+        width: 25%;
+        margin-left: 35%;
+        color: white;
+        background-color: $primary-color-1;
+    }
+}
+
+.registrazione{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    //color: white;
+
+    a{
+        color: $primary-color-2;
+        font-weight: bolder;
+    }
+}

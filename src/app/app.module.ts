@@ -10,6 +10,7 @@ import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule } from 'primeng/toast';
 
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
@@ -23,6 +24,7 @@ import { RegistrazioneComponent } from './components/user/registrazione/registra
 import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     RegistrazioneComponent,
     AddRecipeComponent,
     ChangeColorDirective,
-    EsempioCombineComponent
+    EsempioCombineComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { EsempioCombineComponent } from './components/esempio-combine/esempio-co
     DividerModule,
     PaginatorModule,
     HttpClientModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

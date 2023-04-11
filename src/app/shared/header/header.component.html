@@ -8,9 +8,9 @@
         </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <button type="button" class="btn-nav" routerLink="addRecipe">Aggiungi ricetta</button>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" routerLink="home"><mat-icon>home</mat-icon> Home</a>
               </li>
@@ -18,11 +18,21 @@
                 <a class="nav-link" routerLink="ricette"><mat-icon>restaurant</mat-icon> Ricette</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><mat-icon>local_post_office</mat-icon> Contatti</a>
+                <a class="nav-link" routerLink="addRecipe"><mat-icon>add</mat-icon> Nuova Ricetta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="registrati"><mat-icon>person</mat-icon> Registrati</a>
+                <a class="nav-link" href="#"><mat-icon>local_post_office</mat-icon> Contatti</a>
               </li>
+
+              
+              <li class="nav-item user" *ngIf="!authService.isLogged()">
+                <a class="nav-link" routerLink="login"><mat-icon>person</mat-icon> Accedi</a>
+              </li>
+              <li class="nav-item user" *ngIf="authService.isLogged()">
+                <mat-icon>person</mat-icon><span class="name">Ciao {{user.name}}</span>
+                <a class="nav-link" (click)="logout()"> - ESCI</a>
+              </li>
+              
             </ul>
           </div>
         </div>

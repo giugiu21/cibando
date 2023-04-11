@@ -3,13 +3,14 @@ import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router } from '@angular/router';
 import { Observable, take, map } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
   styleUrls: ['./recipe-card.component.scss']
 })
-export class RecipeCardComponent implements OnDestroy{
+export class RecipeCardComponent implements OnInit, OnDestroy{
 
  @Input() pag: string;
  @Output() messaggio = new EventEmitter();
@@ -26,10 +27,24 @@ export class RecipeCardComponent implements OnDestroy{
   ricette: Recipe[];
 
 
+  roulo: any;
+
  constructor(
   private recipeService: RecipeService,
-  private router: Router
+  private router: Router,
+  private userService: UserService,
   ){}
+
+
+  ngOnInit(): void {
+    if(JSON.parse(localStorage.getItem('user')) !== null){
+      this.userService.userRole.subscribe({
+        next: (res) => {
+          this.roulo = res;
+        }
+      })
+    }
+  }
 
 
   ngOnDestroy(): void {

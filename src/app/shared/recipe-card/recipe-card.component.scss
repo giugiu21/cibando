@@ -42,7 +42,7 @@
         }
 
         .btn.btn-primary{
-            background:$primary-color-1;
+            background:$primary-color-2;
             border: none;
             margin: auto;
             padding: 10px 20px;
@@ -50,6 +50,10 @@
     
     }
 
+    .delete{
+        margin-left: 5px!important;
+        background: $primary-color-1!important;
+    }
 
 }
 
