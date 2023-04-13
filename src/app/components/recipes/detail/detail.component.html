@@ -3,7 +3,9 @@
     <div class="immagine" [ngStyle]="{'background-image': 'url(' + ricetta.image +')'}"></div>
     <div class="container-ricetta">
         <h2>{{ricetta.title}}</h2>
-        <p>{{ricetta.description}}</p>
+        <p>
+            <span [innerHTML]="ricetta.description"></span>
+        </p>
     </div>
     <div class="row">
         <strong>Difficoltà:</strong>

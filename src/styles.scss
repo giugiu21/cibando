@@ -58,14 +58,23 @@ h2{
 
 .p-password{
     width: 100%!important;
-    
 
+    .p-inputtext{
+        border: none;
+        height: 28px;
+    }
+    
 }
 .p-inputtext{
     width: 91%!important;
     float: right; 
 }
 
+.descrizioneRicetta .ck-editor__editable{
+    min-height: 200px!important;
+    max-height: 200px!important;
+    //max-width: 440px!important;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

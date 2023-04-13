@@ -9,7 +9,7 @@ import { Observable, ReplaySubject } from 'rxjs';
 
 export class UserService {
   apiBaseUrl = 'api/users';
-  
+
   datiUtente = new ReplaySubject;
   userRole = new ReplaySubject;
 
@@ -18,6 +18,11 @@ export class UserService {
 
   insertUser(user: any): Observable<any>{
     return this.http.post<any>(`${this.apiBaseUrl}/signup`, user);
+  }
+
+  getUser(email: string): Observable<any>{
+    const emailUtente = {email: email};
+    return this.http.post<any>(`${this.apiBaseUrl}/user`, emailUtente);
   }
 
 }

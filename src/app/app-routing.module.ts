@@ -8,6 +8,8 @@ import { RegistrazioneComponent } from './components/user/registrazione/registra
 import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.component';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,6 +20,7 @@ const routes: Routes = [
   ]},
   {path: 'registrati', component: RegistrazioneComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'profilo', component: ProfileComponent, canActivate: [LoggedInGuard]},
   {path: 'addRecipe', component: AddRecipeComponent},
   {path: 'combine', component: EsempioCombineComponent},
   {path: '**', redirectTo: 'home'},

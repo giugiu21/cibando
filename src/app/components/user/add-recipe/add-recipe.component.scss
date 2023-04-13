@@ -13,7 +13,6 @@
 
 }
 .container-form{
-    height: 650px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -41,14 +40,12 @@
 
     .container-btn-form{
         margin-top: 25px;
-        padding-left: 35%;
+        padding-left: 30%;
         
     }
 
     .form-element{
         width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
         margin-bottom: 10px;
     }
 }

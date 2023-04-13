@@ -12,7 +12,8 @@
                 <div class="form-element">
                     <label>Descrizione ricetta:</label>
                     <br>
-                    <textarea rows = "5" cols = "60" name = "description" class="form-control" formControlName="description"></textarea>
+                    <ckeditor [editor]="Editor" [config]="editorConfig" class="descrizioneRicetta" formControlName="description"></ckeditor>
+
                     <p class="danger" *ngIf="!form.get('description')?.valid && form.get('description').touched">Il campo descrizione è obbligatorio</p>
                 </div>
     

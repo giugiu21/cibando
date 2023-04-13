@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
@@ -25,6 +26,7 @@ import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.comp
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { LoginComponent } from './components/user/login/login.component';
     AddRecipeComponent,
     ChangeColorDirective,
     EsempioCombineComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { LoginComponent } from './components/user/login/login.component';
     PaginatorModule,
     HttpClientModule,
     ToastModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

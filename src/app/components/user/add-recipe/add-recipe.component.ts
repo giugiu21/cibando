@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { take } from 'rxjs';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-recipe',
   templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.scss']
+  styleUrls: ['./add-recipe.component.scss'],
+  
 })
+
+
 export class AddRecipeComponent {
+  @ViewChild("ckbox") ckboxRoot?: ElementRef;
 
   ricettaInserita: any;
 
@@ -20,6 +25,47 @@ export class AddRecipeComponent {
     image: new FormControl('', Validators.required),
     difficulty: new FormControl('', Validators.required),
   })
+
+  Editor = ClassicEditorBuild;
+
+  editorConfig = {
+    toolbar: {
+        items: [
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'codeBlock',
+            'imageUpload',
+            'blockQuote',
+            'insertTable',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+        ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    height: 300,
+};
+
 
   constructor( 
     private router: Router,
@@ -54,7 +100,7 @@ export class AddRecipeComponent {
 
    open(content: any){
     this.onSubmit();
-    this.modalService.open(content, { ariaLabelledBy: 'modale add recipes', size: 'lg', centered: true}).result.then((res) =>{
+    this.modalService.open(content, { ariaLabelledBy: 'modale add recipes', size: 'lg', centered: true}).result.then(() =>{
       //console.log('azione da eseguire')
       this.form.reset();
 
