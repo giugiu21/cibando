@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 import { RECIPES } from '../mocks/recipes.mock';
-import { Observable, of } from 'rxjs';
+import { Observable, ReplaySubject, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeService {
 
   apiBaseUrl = 'api/recipes';
+
+  search = new ReplaySubject();
 
   constructor( private http: HttpClient) { }
 
@@ -36,6 +38,10 @@ export class RecipeService {
 
   postRecipe(res: any): Observable<any>{
     return this.http.post<any>(`${this.apiBaseUrl}/`, res);
+  }
+
+  getRecipesSearch(testo: string): Observable<Recipe[]>{
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/cerca/${testo}`);
   }
 
 

@@ -41,3 +41,25 @@ a.nav-link{
     color: white;
  }
 
+.container-search{
+    border: 1px solid white;
+    background-color: white;
+    padding: 3px 10px;
+    border-radius: 1rem;
+
+    .form-input{
+        border: none;
+        margin-right: 5px;
+    }
+}
+
+
+
+button{
+    background-image: url('../../../assets/images/lente.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15px;
+    height: 25px;
+}

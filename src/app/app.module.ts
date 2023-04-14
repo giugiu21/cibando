@@ -9,18 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PaginatorModule } from 'primeng/paginator';
+//import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { RecipesModule } from './components/recipes/recipes.module';
 
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { RecipesComponent } from './components/recipes/recipes.component';
+//import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
-import { DetailComponent } from './components/recipes/detail/detail.component';
-import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+//import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
+//import { DetailComponent } from './components/recipes/detail/detail.component';
+//import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrazioneComponent } from './components/user/registrazione/registrazione.component';
 import { AddRecipeComponent } from './components/user/add-recipe/add-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
@@ -33,19 +34,20 @@ import { ProfileComponent } from './components/user/profile/profile.component';
   declarations: [
     AppComponent,
     CarouselComponent,
-    RecipesComponent,
+    //RecipesComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    RecipeCardComponent,
-    DetailComponent,
-    RecipesListComponent,
+    //RecipeCardComponent,
+    //DetailComponent,
+    //RecipesListComponent,
     RegistrazioneComponent,
     AddRecipeComponent,
     ChangeColorDirective,
     EsempioCombineComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -57,10 +59,11 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule,
+    //PaginatorModule,
     HttpClientModule,
     ToastModule,
     CKEditorModule,
+    RecipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
